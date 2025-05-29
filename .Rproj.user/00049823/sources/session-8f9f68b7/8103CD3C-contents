@@ -12,6 +12,7 @@ library(palmerpenguins)
 library(dplyr)
 library(ggplot2)
 library(reticulate)
+library(dbplyr)
 
 con <- DBI::dbConnect(
   duckdb::duckdb(), 
