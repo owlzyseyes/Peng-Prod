@@ -1,0 +1,31 @@
+{
+    "id": "2ABA7CA4",
+    "path": "~/Projects/Do4DS/model-db.qmd",
+    "project_path": "model-db.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1748524744917.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "43,0",
+        "scrollLine": "0",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "1252:1148.48486328125"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1748524772,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1748524772019,
+    "read_only": false,
+    "read_only_alternatives": []
+}
