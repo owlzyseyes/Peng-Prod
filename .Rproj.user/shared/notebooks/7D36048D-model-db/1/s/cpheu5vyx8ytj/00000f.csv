@@ -1,0 +1,14 @@
+"0","from pins import board_folder"
+"0","from vetiver import vetiver_pin_write, VetiverModel, VetiverAPI"
+"0",""
+"0","v = VetiverModel(model, ""my_model"")"
+"0",""
+"0","model_board = board_folder(""/data/model"", allow_pickle_read = True)"
+"0",""
+"0",""
+"0","vetiver_pin_write(model_board, v)"
+"2","Model Cards provide a framework for transparent, responsible reporting. 
+ Use the vetiver `.qmd` Quarto template as a place to start, 
+ with vetiver.model_card()
+('The hash of pin ""my_model"" has not changed. Your pin will not be stored.',)
+"

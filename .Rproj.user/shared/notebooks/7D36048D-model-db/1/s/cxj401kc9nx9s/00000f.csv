@@ -1,0 +1,13 @@
+"0","from palmerpenguins import penguins
+"
+"2","G3;Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+  File ""[90m]8;line = 122;file://C:\Users\owlzy\AppData\Local\R\cache\R\renv\cache\v5\windows\R-4.4\x86_64-w64-mingw32\reticulate\1.42.0\92bc19ed4057a728ddbe09b804a3d84d\reticulate\python\rpytools\loader.pyC:\Users\owlzy\AppData\Local\R\cache\R\renv\cache\v5\windows\R-4.4\x86_64-w64-mingw32\reticulate\1.42.0\92bc19ed4057a728ddbe09b804a3d84d\reticulate\python\rpytools\loader.py]8;;[39m"", line 122, in _find_and_load_hook
+    return _run_hook(name, _hook)
+  File ""[90m]8;line = 96;file://C:\Users\owlzy\AppData\Local\R\cache\R\renv\cache\v5\windows\R-4.4\x86_64-w64-mingw32\reticulate\1.42.0\92bc19ed4057a728ddbe09b804a3d84d\reticulate\python\rpytools\loader.pyC:\Users\owlzy\AppData\Local\R\cache\R\renv\cache\v5\windows\R-4.4\x86_64-w64-mingw32\reticulate\1.42.0\92bc19ed4057a728ddbe09b804a3d84d\reticulate\python\rpytools\loader.py]8;;[39m"", line 96, in _run_hook
+    module = hook()
+  File ""[90m]8;line = 120;file://C:\Users\owlzy\AppData\Local\R\cache\R\renv\cache\v5\windows\R-4.4\x86_64-w64-mingw32\reticulate\1.42.0\92bc19ed4057a728ddbe09b804a3d84d\reticulate\python\rpytools\loader.pyC:\Users\owlzy\AppData\Local\R\cache\R\renv\cache\v5\windows\R-4.4\x86_64-w64-mingw32\reticulate\1.42.0\92bc19ed4057a728ddbe09b804a3d84d\reticulate\python\rpytools\loader.py]8;;[39m"", line 120, in _hook
+    return _find_and_load(name, import_)
+ModuleNotFoundError: No module named 'palmerpenguins'
+g"
+"0",""

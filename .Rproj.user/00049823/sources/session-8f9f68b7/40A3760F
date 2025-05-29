@@ -1,0 +1,31 @@
+{
+    "id": "40A3760F",
+    "path": "~/Projects/Do4DS/model-db.qmd",
+    "project_path": "model-db.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1748438737573.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "7,0",
+        "scrollLine": "0",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "1253:1181.8182373046875"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1748446154,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1748495958432,
+    "read_only": false,
+    "read_only_alternatives": []
+}
