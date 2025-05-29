@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="ae66017b" class="cell" data-execution_count="1">
+<div id="fc03fa0c" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
@@ -181,7 +181,7 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </div>
 <section id="get-data" class="level2">
 <h2 class="anchored" data-anchor-id="get-data">Get Data</h2>
-<div id="09fa627f" class="cell" data-execution_count="2">
+<div id="b1740f91" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> duckdb.<span class="ex">connect</span>(<span class="st">'my-db.duckdb'</span>)</span>
@@ -192,7 +192,7 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </section>
 <section id="define-model-and-fit" class="level2">
 <h2 class="anchored" data-anchor-id="define-model-and-fit">Define Model and Fit</h2>
-<div id="cede3349" class="cell" data-execution_count="3">
+<div id="76f683dd" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> get_dummies(df[[<span class="st">'bill_length_mm'</span>, <span class="st">'species'</span>, <span class="st">'sex'</span>]], drop_first <span class="op">=</span> <span class="va">True</span>)</span>
@@ -204,7 +204,7 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </section>
 <section id="get-some-information" class="level2">
 <h2 class="anchored" data-anchor-id="get-some-information">Get some information</h2>
-<div id="c5b36440" class="cell" data-execution_count="4">
+<div id="788b8d79" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R^2 </span><span class="sc">{</span>model<span class="sc">.</span>score(X,y)<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -219,7 +219,7 @@ Columns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_mal
 Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></pre>
 </div>
 </div>
-<div id="38dfdbac" class="cell" data-execution_count="5">
+<div id="7359c8e6" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pins <span class="im">import</span> board_folder</span>
@@ -246,10 +246,10 @@ Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></p
  with vetiver.model_card()
 Writing pin:
 Name: 'my_model'
-Version: 20250529T133706Z-91fdd</code></pre>
+Version: 20250529T135149Z-91fdd</code></pre>
 </div>
 </div>
-<div id="70c4ddf3" class="cell" data-execution_count="6">
+<div id="889379ec" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an API for model predictions</span></span>
