@@ -1,8 +1,0 @@
-"0","df %>%"
-"0","  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +"
-"0","  geom_point() + "
-"0","  geom_smooth(method = ""lm"", se = FALSE) +"
-"0","  labs(title = ""Bill length vs Body mass"","
-"0","       x = ""Bill length (mm)"","
-"0","       y = ""Body mass (g)"") + theme_minimal()"
-"1","DuckDB progress:   0%DuckDB progress:  99%DuckDB progress:  99%                     "
