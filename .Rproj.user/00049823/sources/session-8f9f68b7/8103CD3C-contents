@@ -3,6 +3,10 @@ title: "Penguins EDA"
 format:
   html:
     code-fold: true
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
 ## Penguin Size and Mass by Sex and Species
