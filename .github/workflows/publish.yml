@@ -44,11 +44,13 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Render only eda-db.qmd
-        run: quarto render eda-db.qmd
+        run: quarto render eda-db.qmd --output-dir _site
 
       - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          output-dir: _site
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
