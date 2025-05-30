@@ -59,10 +59,38 @@ prototype_data = example)
 model_board = board_folder("data/model", allow_pickle_read = True)
 
 vetiver_pin_write(model_board, v)
+
+v.metadata.required_packages = [
+    "scikit-learn",
+    "pandas",
+    "numpy",
+    "duckdb",
+    "palmerpenguins"
+]
 ```
 
 ```{python}
 # Creating an API for model predictions
 
 app = VetiverAPI(v, check_prototype = True)
+```
+
+```{python}
+# Prepare Docker artifacts
+vetiver.prepare_docker(model_board,"my_model", 
+    version="20250529T221239Z-91fdd", path=".",
+    port=8080)
+```
+
+```{python}
+pins = model_board.pin_list()
+print("Available pins:", pins)
+```
+
+```{python}
+# Get all versions for your specific model
+versions = model_board.pin_versions('my_model')
+print("\nAvailable versions for my_model:")
+for version in versions:
+    print(f"Version: {version['version']}")
 ```
