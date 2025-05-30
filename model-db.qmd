@@ -76,12 +76,16 @@ app = VetiverAPI(v, check_prototype = True)
 ```
 
 ```{python}
+# Commented out since we already have a working app.py file
+# and don't need to regenerate it during documentation publishing
+'''
 # Prepare Docker artifacts
 prepare_docker(
     model_board, 
     "peng_model",
     version = "20250530T094555Z-91fdd",
     port = 8080)
+'''
 ```
 
 ```{python}
