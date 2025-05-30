@@ -43,7 +43,10 @@ jobs:
       - run: pip install jupyter
       - run: pip install -r requirements.txt
 
-      - name: Render and Publish
+      - name: Render only eda-db.qmd
+        run: quarto render eda-db.qmd
+
+      - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
