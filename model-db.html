@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d7a985b111ba49d75886cb228fa7d15a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cdbe2947715757e022544ab09c2be4d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="fc03fa0c" class="cell" data-execution_count="1">
+<div id="d8a2da90" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
@@ -181,7 +181,7 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </div>
 <section id="get-data" class="level2">
 <h2 class="anchored" data-anchor-id="get-data">Get Data</h2>
-<div id="b1740f91" class="cell" data-execution_count="2">
+<div id="a4b35b27" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> duckdb.<span class="ex">connect</span>(<span class="st">'my-db.duckdb'</span>)</span>
@@ -192,7 +192,7 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </section>
 <section id="define-model-and-fit" class="level2">
 <h2 class="anchored" data-anchor-id="define-model-and-fit">Define Model and Fit</h2>
-<div id="76f683dd" class="cell" data-execution_count="3">
+<div id="aa8afd9a" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> get_dummies(df[[<span class="st">'bill_length_mm'</span>, <span class="st">'species'</span>, <span class="st">'sex'</span>]], drop_first <span class="op">=</span> <span class="va">True</span>)</span>
@@ -204,7 +204,7 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </section>
 <section id="get-some-information" class="level2">
 <h2 class="anchored" data-anchor-id="get-some-information">Get some information</h2>
-<div id="788b8d79" class="cell" data-execution_count="4">
+<div id="6c608d61" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R^2 </span><span class="sc">{</span>model<span class="sc">.</span>score(X,y)<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -219,11 +219,11 @@ Columns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_mal
 Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></pre>
 </div>
 </div>
-<div id="7359c8e6" class="cell" data-execution_count="5">
+<div id="086240d2" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pins <span class="im">import</span> board_folder</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vetiver <span class="im">import</span> vetiver_pin_write, VetiverModel, VetiverAPI</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vetiver <span class="im">import</span> vetiver_pin_write, VetiverModel, VetiverAPI, prepare_docker</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> pd.DataFrame([{</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bill_length_mm"</span>: <span class="dv">45</span>,</span>
@@ -233,23 +233,29 @@ Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></p
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>}])</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> VetiverModel(model, <span class="st">"my_model"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> VetiverModel(model, <span class="st">"peng_model"</span>,</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>prototype_data <span class="op">=</span> example)</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>model_board <span class="op">=</span> board_folder(<span class="st">"data/model"</span>, allow_pickle_read <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>vetiver_pin_write(model_board, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>vetiver_pin_write(model_board, v)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>v.metadata.required_packages <span class="op">=</span> [</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"scikit-learn"</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pandas"</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"numpy"</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"duckdb"</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"palmerpenguins"</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Model Cards provide a framework for transparent, responsible reporting. 
  Use the vetiver `.qmd` Quarto template as a place to start, 
  with vetiver.model_card()
-Writing pin:
-Name: 'my_model'
-Version: 20250529T135149Z-91fdd</code></pre>
+('The hash of pin "peng_model" has not changed. Your pin will not be stored.',)</code></pre>
 </div>
 </div>
-<div id="889379ec" class="cell" data-execution_count="6">
+<div id="577cbbef" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an API for model predictions</span></span>
@@ -257,6 +263,35 @@ Version: 20250529T135149Z-91fdd</code></pre>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> VetiverAPI(v, check_prototype <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<div id="55d2286f" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Commented out since we already have a working app.py file</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and don't need to regenerate it during documentation publishing</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare Docker artifacts</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">prepare_docker(</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">    model_board, </span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    "peng_model",</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    version = "20250530T094555Z-91fdd",</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">    port = 8080)</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>'\n# Prepare Docker artifacts\nprepare_docker(\n    model_board, \n    "peng_model",\n    version = "20250530T094555Z-91fdd",\n    port = 8080)\n'</code></pre>
+</div>
+</div>
+<div id="4fa235f1" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pins <span class="op">=</span> model_board.pin_list()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Available pins:"</span>, pins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Available pins: ['peng_model']</code></pre>
+</div>
+</div>
+<pre><code></code></pre>
 
 
 </section>
