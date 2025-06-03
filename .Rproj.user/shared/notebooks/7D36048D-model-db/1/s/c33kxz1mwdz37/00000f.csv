@@ -1,4 +1,0 @@
-"0","# Creating an API for model predictions"
-"0",""
-"0","app = VetiverAPI(v, check_prototype = True)"
-"0",""

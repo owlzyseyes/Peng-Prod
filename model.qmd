@@ -42,8 +42,11 @@ print(f"Coefficients {model.coef_}")
 ```
 
 ```{python}
-from pins import board_folder
+from pins import board_s3
 from vetiver import vetiver_pin_write, VetiverModel, VetiverAPI, prepare_docker
+from dotenv import load_dotenv
+load_dotenv()
+
 
 example = pd.DataFrame([{
     "bill_length_mm": 45,
@@ -56,7 +59,12 @@ example = pd.DataFrame([{
 v = VetiverModel(model, "peng_model",
 prototype_data = example)
 
-model_board = board_folder("data/model", allow_pickle_read = True)
+# Push the model to s3
+model_board = board_s3("hootist",
+    allow_pickle_read=True,
+    key=os.getenv("AWS_ACCESS_KEY_ID"),
+    secret=os.getenv("AWS_SECRET_ACCESS_KEY"))
+
 
 vetiver_pin_write(model_board, v)
 
@@ -67,6 +75,8 @@ v.metadata.required_packages = [
     "duckdb",
     "palmerpenguins"
 ]
+
+# TO-D0: Put the actual data I am using into s3.
 ```
 
 ```{python}
@@ -86,12 +96,4 @@ prepare_docker(
     version = "20250530T094555Z-91fdd",
     port = 8080)
 '''
-```
-
-```{python}
-pins = model_board.pin_list()
-print("Available pins:", pins)
-```
-
-```{}
 ```
